@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { StyledForm, Label, InputStyle, Button} from './Form.styled';
+
 class Form extends Component {
     state = {
         name: '',
@@ -21,10 +23,10 @@ class Form extends Component {
     render() {
         const { name, number } = this.state;
         return (
-            <form onSubmit={this.submitHandle}>
-                <label>
+            <StyledForm onSubmit={this.submitHandle}>
+                <Label>
                     Name
-                    <input
+                    <InputStyle
                       type="text"
                       name="name"
                       pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -33,10 +35,10 @@ class Form extends Component {
                       value={name}
                       onChange={this.changeHandle}
                     />
-                </label>
-                <label>
+                </Label>
+                <Label>
                     Number
-                    <input
+                    <InputStyle
                     type="tel"
                     name="number"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -45,11 +47,11 @@ class Form extends Component {
                     value={number}
                     onChange={this.changeHandle}
                      />
-                </label>
-                <button type="submit">
+                </Label>
+                <Button type="submit">
                     add contact
-                </button>
-          </form>  
+                </Button>
+          </StyledForm >  
         )
     }
 }

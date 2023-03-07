@@ -5,6 +5,8 @@ import{Form} from './Form'
 import { Filter } from './Filter';
 import { List } from './List';
 
+import { Container } from './App.styled';
+
 export class App extends Component {
   state = {
    contacts: [
@@ -50,7 +52,7 @@ filter: '',
  const filteredName = this.filterContacts();
 
     return (
-   <div>
+   <Container>
         <h1>Phonebook</h1>
         <Form formSubmit={this.submitFormHandler} />
         <h2>Contacts</h2>
@@ -62,7 +64,7 @@ filter: '',
           contacts={filteredName}
           onDelete={this.deleteContact}
         />
-   </div>
+   </Container>
    );
   }
  };
