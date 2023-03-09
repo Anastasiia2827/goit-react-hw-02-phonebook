@@ -20,6 +20,9 @@ class Form extends Component {
   this.reset();
 };
 
+   reset = () => {
+   this.setState({ name: '', number: '' });
+ };
     render() {
         const { name, number } = this.state;
         return (
